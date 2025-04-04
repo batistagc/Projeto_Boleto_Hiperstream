@@ -1,0 +1,38 @@
+{
+    "logo": "itau-logo.svg",
+    "banco": "Banco Itaú S.A.",
+    "codigoBanco": "341-7",
+    "linha_digitavel": "12345.12345 12345.121212 12345.121212 8 12345678901112",
+    "local_pagamento": "Pagável em qualquer banco até o vencimento.",
+    "data_vencimento": "04/04/2025",
+    "beneficiario": "Gabriel Batista",
+    "cpf_beneficiario": "123.456.789-10",
+    "endereco_beneficiario": "Rua Jaguaribe, 9 - Consolação - São Paulo - SP - 69060-000",
+    "agencia_codigo": "123/54321-01",
+    "data_documento": "03/04/2025",
+    "num_documento": "123",
+    "especie_doc": "DM",
+    "aceite": "N",
+    "data_processamento": "03/04/2025",
+    "nosso_numero": "123456789",
+    "carteira": "157",
+    "especie": "R$",
+    "quantidade": "",
+    "valor": "10,99",
+    "encargos": {
+        "2025-04-01": {
+          "tipo": "desconto",
+          "valor": "2,00"
+        },
+        "2025-04-03": {
+          "tipo": "juros",
+          "valor": "0,50"
+        }
+      },
+    "valor_pago": "",
+    "pagador": "Gabriel Marques",
+    "cpf_pagador": "123.123.123-00",
+    "endereco_pagador": "Rua da Consolação, 999 - Consolação - São Paulo - SP - 69060-000",
+    "sacador_avalista": "Gabriel Marques",
+    "cpf_sacador": "123.123.123-00"
+}

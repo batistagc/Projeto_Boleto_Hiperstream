@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Boleto Bancário</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="conteudo-boleto"></div>
+    <script id="boleto-template" type="text/x-handlebars-template">
+    <div class="pagina">
+        <table>
+            <tr>
+                <td class="borda-left logo cabecalho">
+                    <img src="{{logo}}" width="32">
+                    {{banco}}
+                </td>
+                <td class="borda-left cabecalho center">{{codigoBanco}}</td>
+                <td class="sem-borda cabecalho right" colspan="5">
+                    Recibo do Pagador<br>
+                    {{linha_digitavel}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6">
+                    <p>Local de Pagamento</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officia labore reprehenderit numquam
+                    doloribus ut porro laboriosam itaque ipsa ratione.
+                </td>
+                <td class="center">
+                    <p>Data de Vencimento</p>
+                    {{data_vencimento}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6">
+                    <p>Nome do Beneficiário / CNPJ / CPF / Endereço:</p>
+                    {{beneficiario}} CPF: {{cpf_beneficiario}} <br>
+                    {{endereco_beneficiario}}
+                </td>
+                <td class="center">
+                    <p>Agência/Código Beneficiário</p>
+                    {{agencia_codigo}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>Data do documento</p>
+                    {{data_documento}}
+                </td>
+                <td class="center" colspan="2">
+                    <p>Núm. do documento</p>
+                    {{num_documento}}
+                </td>
+                <td class="center">
+                    <p>Espécie doc</p>
+                    {{especie_doc}}
+                </td>
+                <td class="center">
+                    <p>Aceite</p>
+                    {{aceite}}
+                </td>
+                <td class="center">
+                    <p>Data Processamento</p>
+                    {{data_documento}}
+                </td>
+                <td class="center">
+                    <p>Nosso Número</p>{{nosso_numero}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>Uso do Banco</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>Carteira</p>
+                    {{carteira}}
+                </td>
+                <td class="center">
+                    <p>Espécie</p>
+                    {{especie}}
+                </td>
+                <td class="center" colspan="2">
+                    <p>Quantidade</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>Valor</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>(=) Valor do Documento</p>
+                    {{valor}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6" rowspan="3">
+                    <p>Instruções</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officia labore reprehenderit numquam
+                    doloribus ut porro laboriosam itaque ipsa ratione.
+                </td>
+                <td class="center">
+                    <p>(-) Descontos/Abatimentos</p>
+                        {{desconto}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>(+) Juros/Multa</p>
+                        {{juros}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>(=) Valor Pago</p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <table>
+                        <tr>
+                            <td class="sem-borda"><b>Nome do Pagador: </b> {{pagador}}</td>
+                            <td class="sem-borda"><b>CPF/CNPJ: </b> {{cpf_pagador}}</td>
+                        </tr>
+                        <tr>
+                            <td class="sem-borda"><b>Endereço: </b> {{endereco_pagador}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sem-borda"><b>Sacador/Avalista: </b> {{pagador}}</td>
+                            <td class="sem-borda"><b>CPF/CNPJ: </b> {{cpf_pagador}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p class="lb-autenticacao"><b>Autenticação Mecânica</b></p>
+        <hr><br>
+        <table>
+            <tr>
+                <td class="borda-left logo cabecalho ">
+                    <img src="itau-logo.svg" width="32">
+                    Banco Itaú S.A.
+                </td>
+                <td class="borda-left cabecalho center">341-7</td>
+                <td class="sem-borda cabecalho right" colspan="5">
+                    {{linha_digitavel}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6">
+                    <p>Local de Pagamento</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officia labore reprehenderit numquam
+                    doloribus ut porro laboriosam itaque ipsa ratione.
+                </td>
+                <td class="center">
+                    <p>Data de Vencimento</p>
+                    {{data_vencimento}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6">
+                    <p>Nome do Beneficiário / CNPJ / CPF / Endereço:</p>
+                    {{beneficiario}} CPF: {{cpf_beneficiario}} <br>
+                    {{endereco_beneficiario}}
+                </td>
+                <td class="center">
+                    <p>Agência/Código Beneficiário</p>
+                    {{agencia_codigo}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>Data do documento</p>
+                    {{data_documento}}
+                </td>
+                <td class="center" colspan="2">
+                    <p>Núm. do documento</p>
+                    {{num_documento}}
+                </td>
+                <td class="center">
+                    <p>Espécie doc</p>
+                    {{especie_doc}}
+                </td>
+                <td class="center">
+                    <p>Aceite</p>
+                    N
+                </td>
+                <td class="center">
+                    <p>Data Processamento</p>
+                    {{data_documento}}
+                </td>
+                <td class="center">
+                    <p>Nosso Número</p>{{nosso_numero}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>Uso do Banco</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>Carteira</p>
+                    {{carteira}}
+                </td>
+                <td class="center">
+                    <p>Espécie</p>
+                    R$
+                </td>
+                <td class="center" colspan="2">
+                    <p>Quantidade</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>Valor</p>
+                    <br>
+                </td>
+                <td class="center">
+                    <p>(=) Valor do Documento</p>
+                    {{valor}}
+                </td>
+            </tr>
+            <tr>
+                <td class="left" colspan="6" rowspan="3">
+                    <p>Instruções</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam officia labore reprehenderit numquam
+                    doloribus ut porro laboriosam itaque ipsa ratione.
+                </td>
+                <td class="center">
+                    <p>(-) Descontos/Abatimentos</p>
+                        {{desconto}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>(+) Juros/Multa</p>
+                        {{juros}}
+                </td>
+            </tr>
+            <tr>
+                <td class="center">
+                    <p>(=) Valor Pago</p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <table>
+                        <tr>
+                            <td class="sem-borda"><b>Nome do Pagador: </b> {{pagador}}</td>
+                            <td class="sem-borda"><b>CPF/CNPJ: </b> {{cpf_pagador}}</td>
+                        </tr>
+                        <tr>
+                            <td class="sem-borda"><b>Endereço: </b> {{endereco_pagador}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sem-borda"><b>Sacador/Avalista: </b> {{pagador}}</td>
+                            <td class="sem-borda"><b>CPF/CNPJ: </b> {{cpf_pagador}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td class="sem-borda" rowspan="2">
+                    <img class="codigo-barras" src="codigo-barras.png">
+                </td>
+                <td class="sem-borda cabecalho right">
+                    Ficha de Compensação
+                </td>
+            </tr>
+            <tr>
+                <td class="sem-borda right">
+                    <p class="lb-autenticacao"><b>Autenticação Mecânica</b></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</script>
+<script src="script.js"></script>
+</body>
+</html>
