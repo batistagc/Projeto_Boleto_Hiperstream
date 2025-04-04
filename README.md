@@ -46,4 +46,4 @@ Para visualizar localmente rode um servidor local.
 - Compreensão prática de como usar Handlebars em um fluxo real  
 - Manipulação de dados estruturados com JSON  
 - Entendimento de renderização dinâmica de conteúdo HTML  
-- Consolidação de boas práticas com JavaScript assíncrono (`async/await`)  
+- Consolidação de boas práticas com JavaScript assíncrono  
